@@ -13,7 +13,7 @@ from aiogram.utils import executor
 
 storage = MemoryStorage()
 
-TOKEN = "6580626601:AAGp2kcs2HNyUqWVHB61nh_YzMnuUVxvpZs"
+TOKEN = "6323868147:AAFYzjEpbRUR1psbf5-YDFoiDr20u2GHXe4"#"6580626601:AAGp2kcs2HNyUqWVHB61nh_YzMnuUVxvpZs"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=storage)
@@ -56,14 +56,9 @@ async def start(message:types.Message):
     await message.answer(text="Ну что, поехали?", reply_markup=InlineKeyboardMarkup().add(InlineKeyboardButton(text="Да! Начинаем!", callback_data="go")).add(InlineKeyboardButton(text="Мне неактуально, спасибо", callback_data="no")))
 
 async def rejection(callback_query:types.CallbackQuery):
-    farewellMessage = '''
-Очень жаль, что ты не решилась попробовать, но я буду надеяться, что мой блог поможет тебе более глубоко погрузиться в такие темы как проявление своей уникальности и самопознание. Пока ты можешь ознакомиться с моей папкой актуальных “Что такое коучинг”, чтобы понять всю природу этого понятия и чем он может помочь тебе. 
+    farewellMessage = "Очень жаль, что ты не решилась попробовать, но я буду надеяться, что мой блог поможет тебе более глубоко погрузиться в такие темы как проявление своей уникальности и самопознание.\n\nПока ты можешь ознакомиться с <b>моим рилс</b> <a href='https://www.instagram.com/reel/CxNJSoMLnR0/?igshid=MzRlODBiNWFlZA=='><b style='color: blue;'></b>«Что такое трансформационный коучинг?»,</a> чтобы понять всю природу этого понятия и чем он может помочь именно тебе 💌\n\nСпасибо, что уделила время! 💞\nТвоя Ксюша"
 
-Спасибо, что уделила время!
-Твоя Ксюша
-
-'''
-    await callback_query.message.answer(text=farewellMessage)
+    await callback_query.message.answer(text=farewellMessage, parse_mode=types.ParseMode.HTML)
 
 async def next(callback_query:types.CallbackQuery):
     await callback_query.message.answer(text="Если бы вы были цветком, то каким?\n(Вопрос: 1/9)")
