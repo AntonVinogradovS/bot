@@ -13,11 +13,7 @@ from aiogram.utils import executor
 
 storage = MemoryStorage()
 
-<<<<<<< HEAD
-TOKEN = "6323868147:AAFYzjEpbRUR1psbf5-YDFoiDr20u2GHXe4"#"6580626601:AAGp2kcs2HNyUqWVHB61nh_YzMnuUVxvpZs"
-=======
-TOKEN = "6547572768:AAGyYRjrA-KNCmjAkRNVW3OyCxzNJ0kszUU"
->>>>>>> 3e0bbce704ba6a5583bb3e087402ad6fae077d39
+TOKEN = "6580626601:AAGp2kcs2HNyUqWVHB61nh_YzMnuUVxvpZs"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=storage)
